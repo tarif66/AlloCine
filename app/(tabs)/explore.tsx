@@ -6,6 +6,8 @@ import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { IconSymbol } from '@/components/ui/IconSymbol';
+import MovieCard from '@/components/Movie-card';
+import MOVIES from '@/models/mock-movie';
 
 export default function TabTwoScreen() {
   return (
@@ -19,6 +21,7 @@ export default function TabTwoScreen() {
           style={styles.headerImage}
         />
       }>
+      <MovieCard movie={MOVIES[0]} />
       <ThemedView style={styles.titleContainer}>
         <ThemedText type="title">Explore</ThemedText>
       </ThemedView>
