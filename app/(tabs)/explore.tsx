@@ -8,6 +8,7 @@ import { ThemedView } from '@/components/ThemedView';
 import { IconSymbol } from '@/components/ui/IconSymbol';
 import MovieCard from '@/components/Movie-card';
 import MOVIES from '@/models/mock-movie';
+import MovieSlider from '@/components/Movie-slider';
 
 export default function TabTwoScreen() {
   return (
@@ -21,7 +22,7 @@ export default function TabTwoScreen() {
           style={styles.headerImage}
         />
       }>
-      <MovieCard movie={MOVIES[0]} />
+      <MovieSlider header="Sorties de la semaine" movies={MOVIES}/>
       <ThemedView style={styles.titleContainer}>
         <ThemedText type="title">Explore</ThemedText>
       </ThemedView>

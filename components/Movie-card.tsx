@@ -1,7 +1,6 @@
 // components/TransactionCard.tsx
 import React from 'react';
 import { View, Text, StyleSheet, Pressable, Image } from 'react-native';
-import MOVIES from '../models/mock-movie';
 import Movie from '../models/movie';
 import StarIcon from '../assets/icons/star.svg';
 
@@ -15,8 +14,8 @@ const MovieCard: React.FC<Props> = ({ movie }) => {
         <View style={s.cover}>
             <View style={s.rating}>
                 <View style={s.ratingBlock}>
-                <StarIcon />
-                <Text style={s.ratingFont}>{movie.rating}</Text>
+                    <StarIcon />
+                    <Text style={s.ratingFont}>{movie.rating}</Text>
                 </View>
             </View>
             <View style={s.week}>
@@ -39,6 +38,7 @@ rating: {
     alignItems: 'flex-end',
     gap: 8,
     alignSelf: 'stretch'
+
 },
 ratingBlock: {
     paddingHorizontal: 12,
@@ -46,7 +46,7 @@ ratingBlock: {
     gap: 8,
     borderRadius: 30,
     backgroundColor: '#212121',
-    flexDirection: 'row',
+    flexDirection: 'row'
 },
 ratingFont: {
     color: 'white',
