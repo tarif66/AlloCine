@@ -3,6 +3,7 @@ import React from 'react';
 import { View, Text, StyleSheet, Pressable, Image } from 'react-native';
 import MOVIES from '../models/mock-movie';
 import Movie from '../models/movie';
+import StarIcon from '../assets/icons/star.svg';
 
 type Props = {
     movie: Movie,
@@ -14,8 +15,8 @@ const MovieCard: React.FC<Props> = ({ movie }) => {
         <View style={s.cover}>
             <View style={s.rating}>
                 <View style={s.ratingBlock}>
-                    <Image source={require('@/assets/images/star.png')} style={{ alignSelf: 'center' }} />
-                    <Text style={s.ratingFont}>{movie.rating}</Text>
+                <StarIcon />
+                <Text style={s.ratingFont}>{movie.rating}</Text>
                 </View>
             </View>
             <View style={s.week}>
