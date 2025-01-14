@@ -22,7 +22,7 @@ const MovieSlider: React.FC<Props> = ({ header, movies  }) => {
                 <StarIcon />
             </View>
         </View>
-        <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+        <ScrollView style={s.listOfMovies} horizontal={true} showsHorizontalScrollIndicator={false}>
             {movies.map((movieProp) => (
                 <MovieCard movie={movieProp}/>
             ))}
@@ -36,7 +36,12 @@ movieSlider: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'flex-start',
-    alignSelf: 'stretch',
+    alignSelf: 'stretch'
+},
+listOfMovies: {
+    display: 'flex',
+    flexDirection: 'row',
+    gap: 16,
 },
 header: {
     display: 'flex',

@@ -12,7 +12,7 @@ const MovieCard: React.FC<Props> = ({ movie }) => {
   return (
     <View style={s.movieCard}>
         <View style={s.cover}>
-            <View style={s.rating}>
+            <View style={s.ratingPill}>
                 <View style={s.ratingBlock}>
                     <StarIcon />
                     <Text style={s.ratingFont}>{movie.rating}</Text>
@@ -31,32 +31,33 @@ const MovieCard: React.FC<Props> = ({ movie }) => {
 };
 
 const s = StyleSheet.create({
-rating: {
+ratingPill: {
     display: 'flex',
     padding: 12,
     flexDirection: 'column',
     alignItems: 'flex-end',
-    gap: 8,
-    alignSelf: 'stretch'
+    alignSelf: 'stretch',
+    height: 64,
 
 },
 ratingBlock: {
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-    gap: 8,
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    gap: 6,
     borderRadius: 30,
     backgroundColor: '#212121',
     flexDirection: 'row'
 },
 ratingFont: {
     color: 'white',
-    fontSize: 24,
+    fontSize: 15,
     fontFamily: 'Montserrat',
     fontWeight: '700',
     wordWrap: 'break-word',
 },
 week: {
     display: 'flex',
+    height: 100,
     padding: 12,
     flexDirection: 'column',
     alignItems: 'flex-end',
@@ -65,7 +66,7 @@ week: {
 },
 weekBlock: {
     color: '#212121',
-    fontSize: 16,
+    fontSize: 11,
     fontFamily: 'Montserrat',
     fontWeight: '700',
     wordWrap: 'break-word',
@@ -95,8 +96,8 @@ author: {
     },
 movieCard: {        
     display: 'flex',
-    height: 340,
-    width: 214,
+    height: 228,
+    width: 142,
     flexDirection: 'column',
     justifyContent: 'space-between',
     alignItems: 'center'
@@ -105,10 +106,11 @@ cover: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'flex-start',
-    gap: 163,
+    gap: 60,
     alignSelf: 'stretch',
     borderRadius: 20,
     backgroundColor: '#888888',
+    height: 190,
     },
 info: {
     display: 'flex',
