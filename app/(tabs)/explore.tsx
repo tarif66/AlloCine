@@ -1,4 +1,4 @@
-import { StyleSheet, Image, Platform } from 'react-native';
+import { StyleSheet, Image, Platform, View } from 'react-native';
 
 import { Collapsible } from '@/components/Collapsible';
 import { ExternalLink } from '@/components/ExternalLink';
@@ -14,11 +14,7 @@ import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
 export default function TabTwoScreen() {
   return (
-    <SafeAreaProvider>
-      <SafeAreaView>
-        <MovieSlider header="Sorties de la semaine" movies={MOVIES}/>
-      </SafeAreaView>
-    </SafeAreaProvider>
+    <View></View>
       
   );
 }
