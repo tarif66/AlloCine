@@ -2,8 +2,8 @@ import React from 'react';
 import { View, Text, StyleSheet, Pressable, Image, ScrollView } from 'react-native';
 import MOVIES from '@/models/mock-movie';
 import Movie from '@/models/movie';
-import StarIcon from '../assets/icons/star.svg';
 import MovieCard from './Movie-card';
+import ArrowIcon from '../assets/icons/arrow.svg';
 
 
 type Props = {
@@ -19,13 +19,15 @@ const MovieSlider: React.FC<Props> = ({ header, movies  }) => {
                 <Text style={s.titleFont}>{header}</Text>
             </View>
             <View style={s.arrowBlock}>
-                <StarIcon />
+                <ArrowIcon />
             </View>
         </View>
-        <ScrollView style={s.listOfMovies} horizontal={true} showsHorizontalScrollIndicator={false}>
-            {movies.map((movieProp) => (
-                <MovieCard movie={movieProp}/>
-            ))}
+        <ScrollView  horizontal={true} showsHorizontalScrollIndicator={false}>
+            <View style={s.listOfMovies}>
+                {movies.map((movieProp) => (
+                    <MovieCard key={movieProp.id} movie={movieProp}/>
+                ))}
+            </View>
         </ScrollView>
     </View>
   );
@@ -36,16 +38,19 @@ movieSlider: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'flex-start',
-    alignSelf: 'stretch'
+    height: 'auto',
+    gap: 8,
 },
 listOfMovies: {
     display: 'flex',
     flexDirection: 'row',
     gap: 16,
+    paddingHorizontal: 16
 },
 header: {
     display: 'flex',
-    paddingHorizontal: 24,
+    flexDirection: 'row',
+    paddingHorizontal: 16,
     paddingVertical: 0,
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -55,12 +60,11 @@ title: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    gap: 8,
 },
 titleFont: {
-    color: 'black',
+    color: 'white',
     fontFamily: 'Montserrat',
-    fontSize: 30,
+    fontSize: 20,
     fontStyle: 'normal',
     fontWeight: '700',
     lineHeight: 36,
@@ -70,6 +74,8 @@ arrowBlock: {
     padding: 8,
     alignItems: 'center',
     gap: 8,
+    height: 24,
+    width: 24,
 },
 
 });

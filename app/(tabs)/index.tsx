@@ -1,7 +1,5 @@
-import { Image, StyleSheet, Platform, SafeAreaView } from 'react-native';
-
+import { Image, StyleSheet, Platform, SafeAreaView, View, ScrollView } from 'react-native';
 import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
@@ -10,16 +8,25 @@ import MOVIES from '@/models/mock-movie';
 
 export default function HomeScreen() {
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#D0D0D0', dark: '#353636' }} headerImage={undefined} >  
+    <SafeAreaView style={{ flex: 1, paddingTop: 40 }}>
+      <ScrollView  horizontal={false} showsHorizontalScrollIndicator={false}>
+        <View style={styles.homePage}>  
           <MovieSlider header="Sorties de la semaine" movies={MOVIES}/>
-    
-    
-    </ParallaxScrollView>
-
-
+          <MovieSlider header="Sorties de la semaine" movies={MOVIES}/>
+          <MovieSlider header="Sorties de la semaine" movies={MOVIES}/>
+          <MovieSlider header="Sorties de la semaine" movies={MOVIES}/>
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
+  homePage: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    flexShrink: 0,
+    gap: 16,
+  },
 });

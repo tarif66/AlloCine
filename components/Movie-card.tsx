@@ -22,7 +22,7 @@ const MovieCard: React.FC<Props> = ({ movie }) => {
                 <Text style={s.weekBlock}>5e semaine</Text>
             </View>
         </View>
-        <View>
+        <View style={s.info}>
             <Text style={s.title}>{movie.name}</Text>
             <Text style={s.author}>{movie.author}</Text>
         </View>
@@ -31,6 +31,24 @@ const MovieCard: React.FC<Props> = ({ movie }) => {
 };
 
 const s = StyleSheet.create({
+movieCard: {        
+    display: 'flex',
+    height: 228,
+    width: 142,
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    alignItems: 'center'
+    },
+cover: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    gap: 70,
+    alignSelf: 'stretch',
+    borderRadius: 20,
+    backgroundColor: '#888888',
+    height: 190,
+    },
 ratingPill: {
     display: 'flex',
     padding: 12,
@@ -38,7 +56,6 @@ ratingPill: {
     alignItems: 'flex-end',
     alignSelf: 'stretch',
     height: 64,
-
 },
 ratingBlock: {
     paddingHorizontal: 8,
@@ -82,41 +99,24 @@ weekBlock: {
     },
 title: {
     color: 'white',
-    fontSize: 18,
+    fontSize: 13,
     fontFamily: 'Montserrat',
     fontWeight: '700',
-    wordWrap: 'break-word'
+    wordWrap: 'break-word',
+    textAlign: 'center',
     },
 author: {
     color: '#888888',
-    fontSize: 18,
+    fontSize: 13,
     fontFamily: 'Montserrat',
     fontWeight: '400',
-    wordWrap: 'break-word'
-    },
-movieCard: {        
-    display: 'flex',
-    height: 228,
-    width: 142,
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-    alignItems: 'center'
-    },
-cover: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'flex-start',
-    gap: 60,
-    alignSelf: 'stretch',
-    borderRadius: 20,
-    backgroundColor: '#888888',
-    height: 190,
+    wordWrap: 'break-word',
+    textAlign: 'center',
     },
 info: {
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'flex-start',
-    alignSelf: 'stretch'
+    paddingVertical: 8,
 }
 });
 
