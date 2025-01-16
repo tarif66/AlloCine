@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, Pressable, Image, ScrollView } from 'react-native';
 import MOVIES from '@/models/mock-movie';
 import Movie from '@/models/movie';
-import ReleaseCard from './ReleaseCard';
+import ReleaseCard from './Release-card';
 import ArrowIcon from '../assets/icons/arrow.svg';
 
 

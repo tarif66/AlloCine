@@ -5,7 +5,6 @@ import { ThemedView } from '@/components/ThemedView';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import MovieSlider from '@/components/Movie-slider';
 import MOVIES from '@/models/mock-movie';
-import MovieCard from '@/components/Movie-card';
 import ReleaseSlider from '@/components/Release-slider';
 
 export default function HomeScreen() {
