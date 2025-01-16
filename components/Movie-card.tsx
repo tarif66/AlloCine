@@ -23,8 +23,8 @@ const MovieCard: React.FC<Props> = ({ movie }) => {
             </View>
         </View>
         <View style={s.info}>
-            <Text style={s.title}>{movie.name}</Text>
-            <Text style={s.author}>{movie.author}</Text>
+            <Text style={s.title} numberOfLines={1} ellipsizeMode="tail">{movie.name}</Text>
+            <Text style={s.author} numberOfLines={1} ellipsizeMode="tail">{movie.author}</Text>
         </View>
     </View>
   );
@@ -33,11 +33,11 @@ const MovieCard: React.FC<Props> = ({ movie }) => {
 const s = StyleSheet.create({
 movieCard: {        
     display: 'flex',
-    height: 228,
     width: 142,
     flexDirection: 'column',
     justifyContent: 'space-between',
-    alignItems: 'center'
+    alignItems: 'center',
+    height: 'auto'
     },
 cover: {
     display: 'flex',
@@ -102,7 +102,8 @@ title: {
     fontSize: 13,
     fontFamily: 'Montserrat',
     fontWeight: '700',
-    wordWrap: 'break-word',
+    textOverflow: 'ellipsis',
+    overflow: 'hidden',
     textAlign: 'center',
     },
 author: {
@@ -110,13 +111,15 @@ author: {
     fontSize: 13,
     fontFamily: 'Montserrat',
     fontWeight: '400',
-    wordWrap: 'break-word',
+    textOverflow: 'ellipsis',
+    overflow: 'hidden',
     textAlign: 'center',
     },
 info: {
     display: 'flex',
     flexDirection: 'column',
     paddingVertical: 8,
+    height: 'auto',
 }
 });
 

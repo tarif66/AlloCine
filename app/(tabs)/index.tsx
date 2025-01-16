@@ -5,12 +5,17 @@ import { ThemedView } from '@/components/ThemedView';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import MovieSlider from '@/components/Movie-slider';
 import MOVIES from '@/models/mock-movie';
+import MovieCard from '@/components/Movie-card';
 
 export default function HomeScreen() {
   return (
     <SafeAreaView style={{ flex: 1, paddingTop: 40 }}>
       <ScrollView  horizontal={false} showsHorizontalScrollIndicator={false}>
         <View style={styles.homePage}>  
+          <MovieSlider header="Sorties de la semaine" movies={MOVIES}/>
+          <MovieSlider header="Sorties de la semaine" movies={MOVIES}/>
+          <MovieSlider header="Sorties de la semaine" movies={MOVIES}/>
+          <MovieSlider header="Sorties de la semaine" movies={MOVIES}/>
           <MovieSlider header="Sorties de la semaine" movies={MOVIES}/>
           <MovieSlider header="Sorties de la semaine" movies={MOVIES}/>
           <MovieSlider header="Sorties de la semaine" movies={MOVIES}/>
@@ -23,10 +28,7 @@ export default function HomeScreen() {
 
 const styles = StyleSheet.create({
   homePage: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'flex-start',
-    flexShrink: 0,
     gap: 16,
+    height: 'auto',
   },
 });
