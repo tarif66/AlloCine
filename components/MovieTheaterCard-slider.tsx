@@ -4,29 +4,28 @@ import MOVIES from '@/models/mock-movie';
 import Movie from '@/models/movie';
 import ReleaseCard from './Release-card';
 import ArrowIcon from '../assets/icons/arrow.svg';
+import MovieTheaterCard from './MovieTheater-card';
 
 
 type Props = {
     header: string,
-    movies: Movie[],
   };
 
-const ReleaseSlider: React.FC<Props> = ({ header, movies  }) => {
+const MovieTheaterSlider: React.FC<Props> = ({ header  }) => {
   return (
-    <View style={s.movieSlider}>
+    <View style={s.movieTheaterSlider}>
         <View style={s.header}>
             <View style={s.title}>
                 <Text style={s.titleFont}>{header}</Text>
             </View>
-            <View style={s.arrowBlock}>
-                <ArrowIcon />
-            </View>
         </View>
         <ScrollView  horizontal={true} showsHorizontalScrollIndicator={false}>
-            <View style={s.listOfMovies}>
-                {movies.map((movieProp) => (
-                    <ReleaseCard key={movieProp.id} movie={movieProp}/>
-                ))}
+            <View style={s.listOfMovieTheater}>
+                <MovieTheaterCard title="A proximité" />
+                <MovieTheaterCard title="Ajoutez à vos cinémas" />
+                <MovieTheaterCard title="Opéraims" />
+                <MovieTheaterCard title="UGC Ciné Cité Rosny" />
+                <MovieTheaterCard title="Pathé Thillois - IMAX" />
             </View>
         </ScrollView>
     </View>
@@ -34,16 +33,19 @@ const ReleaseSlider: React.FC<Props> = ({ header, movies  }) => {
 };
 
 const s = StyleSheet.create({
-movieSlider: {
+movieTheaterSlider: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'flex-start',
     height: 'auto',
     gap: 8,
 },
-listOfMovies: {
+listOfMovieTheater: {
     display: 'flex',
     flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    height: 'auto',
     gap: 16,
     paddingHorizontal: 16
 },
@@ -68,16 +70,7 @@ titleFont: {
     fontStyle: 'normal',
     fontWeight: '700',
     lineHeight: 36,
-},
-arrowBlock: {
-    display: 'flex',
-    padding: 8,
-    alignItems: 'center',
-    gap: 8,
-    height: 24,
-    width: 24,
-},
-
+}
 });
 
-export default ReleaseSlider;
+export default MovieTheaterSlider;

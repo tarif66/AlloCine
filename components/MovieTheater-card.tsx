@@ -4,29 +4,28 @@ import { View, Text, StyleSheet, Pressable, Image } from 'react-native';
 import Movie from '../models/movie';
 
 type Props = {
-    movie: Movie,
+    title: string,
   };
 
-const ReleaseCard: React.FC<Props> = ({ movie }) => {
+const ReleaseCard: React.FC<Props> = ({ title }) => {
   return (
-    <View style={s.movieCard}>
+    <View style={s.movieTheaterCard}>
         <View style={s.cover}>
         </View>
         <View style={s.info}>
-            <Text style={s.title} numberOfLines={1} ellipsizeMode="tail">{movie.name}</Text>
-            <Text style={s.author} numberOfLines={1} ellipsizeMode="tail">{movie.author}</Text>
+            <Text style={s.title} numberOfLines={2} ellipsizeMode="tail">{title}</Text>
         </View>
     </View>
   );
 };
 
 const s = StyleSheet.create({
-movieCard: {        
+movieTheaterCard: {        
     display: 'flex',
-    width: 142,
+    width: 96,
     flexDirection: 'column',
     justifyContent: 'space-between',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     height: 'auto'
     },
 cover: {
@@ -37,7 +36,7 @@ cover: {
     alignSelf: 'stretch',
     borderRadius: 20,
     backgroundColor: '#888888',
-    height: 190,
+    height: 70,
     },
 title: {
     color: 'white',
@@ -46,22 +45,14 @@ title: {
     fontWeight: '700',
     textOverflow: 'ellipsis',
     overflow: 'hidden',
-    textAlign: 'center',
-    },
-author: {
-    color: '#888888',
-    fontSize: 13,
-    fontFamily: 'Montserrat',
-    fontWeight: '400',
-    textOverflow: 'ellipsis',
-    overflow: 'hidden',
-    textAlign: 'center',
+    justifyContent: 'flex-start',
+
     },
 info: {
-    display: 'flex',
     flexDirection: 'column',
     paddingVertical: 8,
-    height: 'auto',
+    height: 50,
+    width: 'auto',
 }
 });
 
